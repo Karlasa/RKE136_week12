@@ -263,3 +263,9 @@ form {
 .movie-data-list span {
   font-weight: bold;
 }
+
+.chat-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
