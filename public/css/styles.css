@@ -1,7 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #151515;
+}
+
+.movie-card {
+  text-align: center;
+}
+
+.movie-title {
+  text-transform: capitalize;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.movie-poster-container img {
+  margin-top: 2rem;
+  height: 500px;
+  border-radius: 1rem;
+  animation: slideIn 1.5s ease-out;
+}
+
+.movie-rating {
+  display: inline-block;
+  border: 1px solid #151515;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+.movie-duration {
+  margin-left: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.movie-duration:before {
+  content: "\2022";
+}
+
+.movie-info-quote {
+  color: #151515a4;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.movie-info-overview-title {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+
+.movie-info-actions {
+  font-size: 1.1rem;
+}
+
+.movie-info-actions ul {
+  list-style: none;
+}
+
+.movie-info-actions ul li {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgb(3, 37, 65);
+  animation: pulse 2s infinite;
+}
+
+.movie-info-actions ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #777;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer ul li a {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #777;
+}
+/*
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+*/
+
+.modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #4037372e;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #fffec1;
+  margin: 5% auto;
+  padding: 5rem;
+  width: 40%;
+  animation: zoom-in 1s;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.closeBtn {
+  float: right;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.movie-poster {
+  cursor: pointer;
+}
+
+.movie-poster-modal {
+  height: 350px;
+  margin-bottom: 1rem;
+}
+
+.carousel {
+  max-width: 500px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+  display: none;
+}
+
+.carousel .carousel__item--visible {
+  display: block;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel .carousel__actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .carousel__actions button {
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-color: rgba(0, 255, 251, 0.47);
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0.5rem;
 }
 
 .container {
@@ -30,9 +262,4 @@ form {
 
 .movie-data-list span {
   font-weight: bold;
-}
-
-img {
-  width: 250px;
-  border-radius: 5px;
 }
